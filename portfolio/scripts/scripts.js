@@ -1,6 +1,6 @@
 const NOME = "Thiago Henrique";
-let tituloProfissional = "Desenvolvimento de sistemas";
-let minhaBio = "Estudante de desenvolvimento de sistemas, com foco em backend, muito esforçado e dedicado.";
+let tituloProfissional = "Desenvolvedor Backend";
+let minhaBio = "Estudante de Desenvolvimento de Sistemas com foco em back-end, desenvolvendo habilidades em Python, Javascript e banco de dados. Comprometido com a resolução de problemas e a criação de soluções eficientes através da prática constante.studante de desenvolvimento de sistemas, com foco em backend, muito esforçado e dedicado.";
 
 let anoFormatura = 2026;
 let mesFormatura = 12;
