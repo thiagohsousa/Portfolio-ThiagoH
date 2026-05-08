@@ -1,3 +1,4 @@
+'use strict';
 const NOME = "Thiago Henrique";
 let tituloProfissional = "Desenvolvedor Backend";
 let minhaBio = "Estudante de Desenvolvimento de Sistemas com foco em back-end, desenvolvendo habilidades em Python, Javascript e banco de dados. Comprometido com a resolução de problemas e a criação de soluções eficientes através da prática constante.studante de desenvolvimento de sistemas, com foco em backend, muito esforçado e dedicado.";
@@ -165,3 +166,32 @@ btnBanco.addEventListener("click", function() {
   pontosBack++;
   exibirPerfil();
 });
+
+
+/*for (let i = 0; i <=20; i++) {
+  let pares = i % 2 === 0 ? "par" : "ímpar";
+  console.log(`${i} é ${pares}`);
+}*/
+
+
+/*let alunos = ["thiago","Gustavo", "Blackn444", "Bradock"];
+for (let contem of alunos) {
+  if (contem === "thiago") {
+    document.write(`<p>${contem} - presente</p>`);
+  } else {
+    document.write(`<p>${contem} - ausente</p>`);
+  }
+}*/
+
+
+let habilidades = ["Python", "JavaScript", "SQL", "Git", "Css","FastAPI","Html", "Proatividade", "Resolução de Problemas", "Trabalho em Equipe", "Comunicação Eficaz", "Pensamento Crítico"];
+
+for (let habilidade of habilidades) {
+
+  if (habilidade === "Python" || habilidade === "JavaScript" || habilidade === "SQL" || habilidade === "Git" || habilidade === "Css" || habilidade === "FastAPI" || habilidade === "Html") {
+    document.write(`<p>${habilidade} - Hard Skills </p>`);
+  } else {
+    document.write(`<p>${habilidade} - Soft Skills </p>`);
+  }
+
+}
