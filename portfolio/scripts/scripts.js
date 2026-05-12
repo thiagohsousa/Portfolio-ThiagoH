@@ -195,3 +195,50 @@ for (let habilidade of habilidades) {
   }
 
 }
+
+let projetos = [
+  {
+    nome: "Aplicação de gerenciamento de estacionamento",
+    tecnologias: ["python", "Tkinter", "SQLite", "Git"],
+    descricao: "Desenvolvi uma aplicação de gerenciamento de estacionamento..."
+  },
+
+  {
+    nome: "Sistema de controle de gastos pessoais",
+    tecnologias: ["python", "Sqlite", "Tkinter", "Git"],
+    descricao: "Criei um sistema de controle de gastos pessoais..."
+  },
+
+  {
+    nome: "API de gerenciamento de clientes",
+    tecnologias: ["python", "FastAPI", "SQLAlchemy", "Git"],
+    descricao: "Desenvolvi uma API de gerenciamento de clientes..."
+  },
+
+  {
+    nome: "Sistema de Task Manager",
+    tecnologias: ["python", "FastAPI", "SQLAlchemy", "Git", "html", "css", "javascript"],
+    descricao: "Sistema para gerenciamento de tarefas."
+  }
+];
+
+let container = document.body;
+
+projetos.forEach(projeto => {
+
+  let titulo = document.createElement("h2");
+  titulo.textContent = projeto.nome;
+
+  let descricao = document.createElement("p");
+  descricao.textContent = projeto.descricao;
+
+  let tecnologias = document.createElement("p");
+  tecnologias.textContent =
+    "Tecnologias utilizadas: " + projeto.tecnologias.join(", ");
+
+  container.appendChild(titulo);
+  container.appendChild(descricao);
+  container.appendChild(tecnologias);
+
+});
+
