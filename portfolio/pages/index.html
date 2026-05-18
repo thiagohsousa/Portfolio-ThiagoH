@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Dev Thiago Henrique</title>
-    <link rel="stylesheet" href="/portfolio/styles/style.css"">
+
+    <link rel="stylesheet" href="/portfolio/styles/style.css">
 </head>
+
 <body>
+
     <main>
-         <button id="modoEscuroClaro">
+
+        <button id="modoEscuroClaro">
             Modo Escuro/Claro
         </button>
 
@@ -26,13 +32,29 @@
 
         <div id="diaSemana"></div>
 
+
+
         <section>
 
             <h2>Habilidades</h2>
 
             <div id="habilidades"></div>
 
+
+            <input 
+                type="text"
+                id="novaHabilidade"
+                placeholder="Digite uma habilidade"
+            >
+
+            <button id="btnAdicionarHabilidade">
+                Adicionar habilidade
+            </button>
+
+            <p id="mensagemHabilidade"></p>
+
         </section>
+
 
         <section>
 
@@ -42,31 +64,50 @@
 
         </section>
 
+        <!-- QUIZ -->
+
         <section id="quiz">
+
             <h2>Descubra seu perfil dev</h2>
+
             <p>Você prefere trabalhar com...</p>
 
-            <button id="btn-visual">🎨 Visual e design</button>
-            <button id="btn-logica">⚙️ Lógica e dados</button>
+            <button id="btn-visual">
+                🎨 Visual e design
+            </button>
 
-         <p>O que você acha mais interessante?</p>
+            <button id="btn-logica">
+                ⚙️ Lógica e dados
+            </button>
 
-            <button id="btn-animacao">✨ Criar animações e interações</button>
-            <button id="btn-api">🔌 Trabalhar com APIs e servidores</button>
-            
-        <p>Qual dessas atividades você prefere?</p>
+            <p>O que você acha mais interessante?</p>
 
-            <button id="btn-layout">📐 Montar layouts e responsividade</button>
-            <button id="btn-banco">🗄️ Modelar banco de dados</button>
+            <button id="btn-animacao">
+                ✨ Criar animações e interações
+            </button>
+
+            <button id="btn-api">
+                🔌 Trabalhar com APIs e servidores
+            </button>
+
+            <p>Qual dessas atividades você prefere?</p>
+
+            <button id="btn-layout">
+                📐 Montar layouts e responsividade
+            </button>
+
+            <button id="btn-banco">
+                🗄️ Modelar banco de dados
+            </button>
+
             <div id="resultado-quiz"></div>
+
         </section>
 
     </main>
-     
-<script src="/portfolio/scripts/scripts.js"></script>
 
+    <script src="/portfolio/scripts/scripts.js"></script>
 
-
-    
 </body>
+
 </html>
