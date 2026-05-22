@@ -2,349 +2,194 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-const NOME = "Thiago Henrique";
+    /* ========================================
+       DADOS PRINCIPAIS
+    ======================================== */
 
-let tituloProfissional = "Desenvolvedor Backend";
+    const NOME = "Thiago Henrique";
 
-const botaoTema = document.getElementById("modoEscuroClaro");
+    let tituloProfissional =
+        "Backend Developer";
 
-botaoTema.addEventListener("click", function () {
-    document.body.classList.toggle("light-mode");
-});
+    let minhaBio =
+        "Estudante de Desenvolvimento de Sistemas com foco em back-end, desenvolvendo APIs, banco de dados e aplicações modernas com Python e JavaScript.";
 
-let minhaBio =
-    "Estudante de Desenvolvimento de Sistemas com foco em back-end, desenvolvendo habilidades em Python, JavaScript e banco de dados.";
+    let anoIngresso = 2025;
 
-let curso = {
-    nome: "Desenvolvimento de Sistemas",
-    semestre: 3,
-    disciplinaAtual: "Linguagem de Programação"
-};
+    let anoFormatura = 2026;
 
-let anoFormatura = 2026;
-let mesFormatura = 12;
-let diaFormatura = 31;
+    let anoAtual =
+        new Date().getFullYear();
 
-let anoIngresso = 2025;
+    let anosEstudo =
+        anoAtual - anoIngresso;
 
-let hoje = new Date();
+    /* ========================================
+       DARK / LIGHT MODE
+    ======================================== */
 
-let mesAtual = hoje.getMonth() + 1;
-let anoAtual = hoje.getFullYear();
-let diaAtual = hoje.getDate();
+    const botaoTema =
+        document.getElementById(
+            "modoEscuroClaro"
+        );
 
-let anos = anoFormatura - anoAtual;
-let meses = mesFormatura - mesAtual;
-let dias = diaFormatura - diaAtual;
+    botaoTema.addEventListener(
+        "click",
+        () => {
 
-function exibirTempoRestante() {
+            document.body.classList.toggle(
+                "light-mode"
+            );
 
-    if (meses <= 0 && dias <= 0 && anos <= 0) {
-        document.getElementById("tempoRestante").innerText = "Curso já concluído";
-    }
+            if(
+                document.body.classList.contains(
+                    "light-mode"
+                )
+            ){
 
-    if (anoFormatura - anoAtual <= 0) {
+                botaoTema.innerHTML = "☀️";
 
-        document.getElementById("tempoRestante").innerText = "-";
+            }else{
 
-    } else if (anoFormatura - anoAtual === 1) {
+                botaoTema.innerHTML = "🌙";
+            }
+        }
+    );
 
-        document.getElementById("tempoRestante").innerText =
-            `Tempo restante: ${anoFormatura - anoAtual} ano`;
+    /* ========================================
+       EXIBIR INFORMAÇÕES
+    ======================================== */
 
-    } else {
+    function exibirInformacoes(){
 
-        document.getElementById("tempoRestante").innerText =
-            `Tempo restante: ${anoFormatura - anoAtual} anos`;
-    }
-}
+        document.getElementById(
+            "meuNome"
+        ).innerText = NOME;
 
-function exibirInformacoes() {
+        document.getElementById(
+            "tituloProfissional"
+        ).innerText = tituloProfissional;
 
-    document.getElementById("meuNome").innerText = NOME;
+        document.getElementById(
+            "minhaBio"
+        ).innerText = minhaBio;
 
-    document.getElementById("tituloProfissional").innerText = tituloProfissional;
-
-    document.getElementById("minhaBio").innerText = minhaBio;
-
-    document.getElementById("anoFormatura").innerText =
-        `Ano de formatura: ${anoFormatura}`;
-
-    document.getElementById("anoIngresso").innerHTML =
-        `<p>Ano de ingresso: ${anoIngresso}</p>`;
-}
-
-let diaSemana = hoje.getDay();
-
-let diaEscrito;
-
-function obterDiaSemana() {
-
-    switch (diaSemana) {
-
-        case 0:
-            diaEscrito = "Domingo";
-            break;
-
-        case 1:
-            diaEscrito = "Segunda-feira";
-            break;
-
-        case 2:
-            diaEscrito = "Terça-feira";
-            break;
-
-        case 3:
-            diaEscrito = "Quarta-feira";
-            break;
-
-        case 4:
-            diaEscrito = "Quinta-feira";
-            break;
-
-        case 5:
-            diaEscrito = "Sexta-feira";
-            break;
-
-        case 6:
-            diaEscrito = "Sábado";
-            break;
-
-        default:
-            diaEscrito = "Dia inválido";
-    }
-}
-
-function exibirDiaSemana() {
-
-    document.getElementById("diaSemana").innerHTML =
-        `<p>Hoje é ${diaEscrito}</p>`;
-}
-
-const resultadoQuiz = document.getElementById("resultado-quiz");
-
-let pontosFront = 0;
-let pontosBack = 0;
-
-function estilizarResultado(cor) {
-
-    resultadoQuiz.style.backgroundColor = cor;
-
-    resultadoQuiz.style.padding = "12px";
-
-    resultadoQuiz.style.borderRadius = "8px";
-}
-
-function exibirPerfil() {
-
-    if (pontosFront > pontosBack) {
-
-        resultadoQuiz.innerHTML = `
-            <strong>🎨 Perfil Front-End!</strong><br>
-            Você gosta de interfaces e experiência do usuário.
+        document.getElementById(
+            "anoIngresso"
+        ).innerHTML = `
+            <p>
+                📚 Estudando desenvolvimento há
+                ${anosEstudo} ano(s)
+            </p>
         `;
 
-        estilizarResultado("#dbeafe");
-
-    } else if (pontosBack > pontosFront) {
-
-        resultadoQuiz.innerHTML = `
-            <strong>⚙️ Perfil Back-End!</strong><br>
-            Você gosta de lógica e dados.
+        document.getElementById(
+            "tempoRestante"
+        ).innerHTML = `
+            <p>
+                🎓 Formatura prevista:
+                ${anoFormatura}
+            </p>
         `;
-
-        estilizarResultado("#bbf7d0");
-
-    } else {
-
-        resultadoQuiz.innerHTML = `
-            <strong>🔄 Perfil Full Stack!</strong><br>
-            Você gosta das duas áreas.
-        `;
-
-        estilizarResultado("#fde68a");
-    }
-}
-
-function responderQuiz(tipo) {
-
-    if (tipo === "front") {
-        pontosFront++;
-    } else {
-        pontosBack++;
     }
 
-    exibirPerfil();
-}
+    /* ========================================
+       HABILIDADES
+    ======================================== */
 
-document.getElementById("btn-visual")
-.addEventListener("click", function () {
-    responderQuiz("front");
-});
+    const habilidades = [
 
-document.getElementById("btn-logica")
-.addEventListener("click", function () {
-    responderQuiz("back");
-});
+        {
+            nome:"Python",
+            icone:"devicon-python-plain"
+        },
 
-document.getElementById("btn-animacao")
-.addEventListener("click", function () {
-    responderQuiz("front");
-});
+        {
+            nome:"JavaScript",
+            icone:"devicon-javascript-plain"
+        },
 
-document.getElementById("btn-api")
-.addEventListener("click", function () {
-    responderQuiz("back");
-});
+        {
+            nome:"FastAPI",
+            icone:"devicon-fastapi-plain"
+        },
 
-document.getElementById("btn-layout")
-.addEventListener("click", function () {
-    responderQuiz("front");
-});
+        {
+            nome:"HTML5",
+            icone:"devicon-html5-plain"
+        },
 
-document.getElementById("btn-banco")
-.addEventListener("click", function () {
-    responderQuiz("back");
-});
+        {
+            nome:"CSS3",
+            icone:"devicon-css3-plain"
+        },
 
-let habilidades = [
-    "Python",
-    "JavaScript",
-    "SQL",
-    "Git",
-    "CSS",
-    "FastAPI",
-    "HTML",
-    "Proatividade",
-    "Trabalho em equipe",
-    "Comunicação"
-];
+        {
+            nome:"Git",
+            icone:"devicon-git-plain"
+        },
 
-function listarHabilidades() {
+        {
+            nome:"SQL",
+            icone:"devicon-mysql-plain"
+        }
+    ];
 
-    let resultado = "";
+    function listarHabilidades(){
 
-    for (let habilidade of habilidades) {
+        let resultado = "";
 
-        if (
-            habilidade === "Python" ||
-            habilidade === "JavaScript" ||
-            habilidade === "SQL" ||
-            habilidade === "Git" ||
-            habilidade === "CSS" ||
-            habilidade === "FastAPI" ||
-            habilidade === "HTML"
-        ) {
+        for(let habilidade of habilidades){
 
             resultado += `
-                <p>${habilidade} - Hard Skill</p>
-            `;
 
-        } else {
+                <div class="skill-card">
 
-            resultado += `
-                <p>${habilidade} - Soft Skill</p>
+                    <i class="${habilidade.icone}"></i>
+
+                    <h3>
+                        ${habilidade.nome}
+                    </h3>
+
+                </div>
             `;
         }
+
+        return resultado;
     }
 
-    return resultado;
-}
+    function exibirHabilidades(){
 
-function exibirHabilidades() {
-
-    document.getElementById("habilidades").innerHTML =
-        listarHabilidades();
-}
-
-/* MANIPULAÇÃO DE DADOS */
-
-const inputHabilidade =
-    document.getElementById("novaHabilidade");
-
-const btnAdicionarHabilidade =
-    document.getElementById("btnAdicionarHabilidade");
-
-const mensagemHabilidade =
-    document.getElementById("mensagemHabilidade");
-
-btnAdicionarHabilidade.addEventListener("click", function () {
-
-    let habilidadeDigitada =
-        inputHabilidade.value.trim();
-
-    if (habilidadeDigitada === "") {
-
-        mensagemHabilidade.innerText =
-            "Digite uma habilidade válida.";
-
-        mensagemHabilidade.style.color = "red";
-
-        return;
+        document.getElementById(
+            "habilidades"
+        ).innerHTML = listarHabilidades();
     }
 
-    if (habilidades.includes(habilidadeDigitada)) {
+    /* ========================================
+       PROJETOS
+    ======================================== */
 
-        mensagemHabilidade.innerText =
-            "Essa habilidade já existe.";
-
-        mensagemHabilidade.style.color = "orange";
-
-        return;
-    }
-
-    habilidades.push(habilidadeDigitada);
-
-    habilidades.sort();
-
-    exibirHabilidades();
-
-    mensagemHabilidade.innerText =
-        "Habilidade adicionada com sucesso!";
-
-    mensagemHabilidade.style.color = "#22c55e";
-
-    inputHabilidade.value = "";
-});
-
-
-let projetos = [
-
+const projetos = [
     {
-        nome: "Sistema de estacionamento",
-
-        tecnologias: [
-            "Python",
-            "SQLite",
-            "Tkinter"
-        ],
-
-        descricao:
-            "Aplicação para gerenciamento de estacionamento."
+        nome: "Sistema Financeiro",
+        descricao: "Sistema para controle financeiro com receitas e despesas.",
+        tecnologias: ["Python", "SQLite", "FastAPI"],
+        imagem: "https://images.unsplash.com/photo-1554224155-6726b3ff858f",
+        repo: "https://github.com/thiagohsousa/expense_Control"
     },
-
     {
-        nome: "Controle de gastos",
-
-        tecnologias: [
-            "Python",
-            "SQLite"
-        ],
-
-        descricao:
-            "Sistema de controle financeiro."
+        nome: "API de Clientes",
+        descricao: "API REST para gerenciamento de clientes.",
+        tecnologias: ["FastAPI", "SQLAlchemy", "SQLite"],
+        imagem: "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+        repo: "https://github.com/thiagohsousa/AuthFlow-API"
     },
-
     {
-        nome: "API de clientes",
-
-        tecnologias: [
-            "FastAPI",
-            "SQLAlchemy"
-        ],
-
-        descricao:
-            "API para gerenciamento de clientes."
+        nome: "Sistema de Estacionamento",
+        descricao: "Controle completo para redes de estacionamento",
+        tecnologias: ["Python", "Tkinter", "SQLite"],
+        imagem: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a",
+        repo: "https://github.com/thiagohsousa/divagas"
     }
 ];
 
@@ -355,14 +200,23 @@ function listarProjetos() {
     for (let projeto of projetos) {
 
         resultado += `
-            <h2>${projeto.nome}</h2>
+            <a class="projeto-card" href="${projeto.repo}" target="_blank">
 
-            <p>${projeto.descricao}</p>
+                <img src="${projeto.imagem}" alt="${projeto.nome}">
 
-            <p>
-                Tecnologias:
-                ${projeto.tecnologias.join(", ")}
-            </p>
+                <div class="projeto-info">
+
+                    <h3>${projeto.nome}</h3>
+
+                    <p>${projeto.descricao}</p>
+
+                    <div class="techs">
+                        ${projeto.tecnologias.join(" • ")}
+                    </div>
+
+                </div>
+
+            </a>
         `;
     }
 
@@ -370,26 +224,190 @@ function listarProjetos() {
 }
 
 function exibirProjetos() {
-
-    document.getElementById("projetos").innerHTML =
-        listarProjetos();
+    document.getElementById("projetos").innerHTML = listarProjetos();
 }
+    /* ========================================
+       ÁREA DEV
+    ======================================== */
 
-function iniciar() {
+    const resultadoQuiz =
+        document.getElementById(
+            "resultado-quiz"
+        );
 
-    exibirTempoRestante();
+    document.getElementById(
+        "btn-api"
+    ).addEventListener(
+        "click",
+        function(){
 
-    exibirInformacoes();
+            resultadoQuiz.innerHTML = `
 
-    obterDiaSemana();
+                <h3>
+                    ⚙️ APIs & Backend
+                </h3>
 
-    exibirDiaSemana();
+                <p>
+                    Você gosta de lógica,
+                    integração de sistemas
+                    e desenvolvimento de APIs.
+                </p>
+            `;
+        }
+    );
 
-    exibirHabilidades();
+    document.getElementById(
+        "btn-banco"
+    ).addEventListener(
+        "click",
+        function(){
 
-    exibirProjetos();
+            resultadoQuiz.innerHTML = `
+
+                <h3>
+                    🗄 Banco de Dados
+                </h3>
+
+                <p>
+                    Você gosta de modelagem,
+                    organização de dados
+                    e consultas SQL.
+                </p>
+            `;
+        }
+    );
+
+    document.getElementById(
+        "btn-layout"
+    ).addEventListener(
+        "click",
+        function(){
+
+            resultadoQuiz.innerHTML = `
+
+                <h3>
+                    🎨 Front-End
+                </h3>
+
+                <p>
+                    Você gosta de interfaces,
+                    animações e experiência
+                    do usuário.
+                </p>
+            `;
+        }
+    );
+
+    /* ========================================
+       FORMULÁRIO
+    ======================================== */
+
+    const formulario =
+        document.getElementById(
+            "formulario"
+        );
+
+    formulario.addEventListener(
+        "submit",
+        function(event){
+
+            event.preventDefault();
+
+            const nome =
+                document.getElementById(
+                    "nome"
+                ).value;
+
+            const email =
+                document.getElementById(
+                    "email"
+                ).value;
+
+            const mensagem =
+                document.getElementById(
+                    "mensagem"
+                ).value;
+
+            const erro =
+                document.getElementById(
+                    "erro"
+                );
+
+            if(
+                nome === "" ||
+                email === "" ||
+                mensagem === ""
+            ){
+
+                erro.innerText =
+                    "Preencha todos os campos.";
+
+                erro.style.color = "#ef4444";
+
+                return;
+            }
+
+            erro.innerText =
+                "Mensagem enviada com sucesso!";
+
+            erro.style.color = "#22c55e";
+
+            formulario.reset();
+        }
+    );
+
+    /* ========================================
+       GITHUB API
+    ======================================== */
+
+    /* =========================
+   GITHUB API (AJUSTADO)
+========================= */
+
+async function buscarGithub() {
+
+    try {
+
+        const resposta = await fetch("https://api.github.com/users/thiagohsousa");
+        const dados = await resposta.json();
+
+        document.getElementById("github-card").innerHTML = `
+        
+            <img src="${dados.avatar_url}" alt="GitHub">
+
+            <h3>${dados.name ?? "Thiago Henrique"}</h3>
+
+            <p>👥 Seguidores: <strong>${dados.followers}</strong></p>
+
+            <p>📦 Repositórios: <strong>${dados.public_repos}</strong></p>
+
+            <a href="${dados.html_url}" target="_blank" class="btn">
+                Ver perfil
+            </a>
+        `;
+
+    } catch (erro) {
+
+        document.getElementById("github-card").innerHTML = `
+            <p>Erro ao carregar GitHub</p>
+        `;
+    }
 }
+    /* ========================================
+       INICIAR
+    ======================================== */
 
-iniciar();
+    function iniciar(){
+
+        exibirInformacoes();
+
+        exibirHabilidades();
+
+        exibirProjetos();
+
+        buscarGithub();
+    }
+
+    iniciar();
 
 });
