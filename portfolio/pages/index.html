@@ -10,104 +10,277 @@
     <link rel="stylesheet" href="/portfolio/styles/style.css">
 </head>
 
+<body><!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Thiago Henrique | Backend Developer</title>
+
+    <link
+        rel="stylesheet"
+        href="/portfolio/styles/style.css"
+    >
+
+    <!-- DEVICON -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    >
+
+</head>
+
 <body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <nav class="navbar">
+           
+
+            <h2 class="logo">
+                Thiago Henrique
+            </h2>
+
+            <ul class="menu">
+
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#projetos">Projetos</a>
+                </li>
+
+                <li>
+                    <a href="#github">GitHub</a>
+                </li>
+
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+
+            </ul>
+
+            <button id="modoEscuroClaro">
+
+                🌙
+
+            </button>
+
+        </nav>
+
+    </header>
+
+    <!-- MAIN -->
 
     <main>
 
-        <button id="modoEscuroClaro">
-            Modo Escuro/Claro
-        </button>
+        <!-- HERO -->
 
-        <h1 id="meuNome"></h1>
+      <section id="hero">
+
+    <div class="hero-content">
+
+        <div class="nome-com-foto">
+
+            <img 
+                src="https://github.com/thiagohsousa.png"
+                alt="Thiago Henrique"
+            >
+
+            <h1 id="meuNome"></h1>
+
+        </div>
 
         <h2 id="tituloProfissional"></h2>
 
         <p id="minhaBio"></p>
 
-        <p id="anoFormatura"></p>
+        <div class="hero-buttons">
 
-        <p id="tempoRestante"></p>
+            <a href="https://github.com/thiagohsousa" target="_blank" class="btn btn-outline">
+                GitHub
+            </a>
 
-        <div id="anoIngresso"></div>
+            <a href="https://www.linkedin.com/in/thiago-henrique-sousa01" target="_blank" class="btn btn-outline">
+                LinkedIn
+            </a>
 
-        <div id="diaSemana"></div>
+            <a href="https://www.instagram.com/thiagohsousa_" target="_blank" class="btn btn-outline">
+                Instagram
+            </a>
 
+        </div>
 
+    </div>
 
-        <section>
+</section>
 
-            <h2>Habilidades</h2>
+        <!-- SOBRE -->
 
-            <div id="habilidades"></div>
+        <section id="sobre">
 
+            <h2>
+                Sobre mim
+            </h2>
 
-            <input 
-                type="text"
-                id="novaHabilidade"
-                placeholder="Digite uma habilidade"
-            >
+            <div class="sobre-card">
 
-            <button id="btnAdicionarHabilidade">
-                Adicionar habilidade
-            </button>
+                <p id="anoIngresso"></p>
 
-            <p id="mensagemHabilidade"></p>
+                <p id="tempoRestante"></p>
+
+                <p id="anoFormatura"></p>
+
+            </div>
 
         </section>
 
+        <!-- SKILLS -->
 
-        <section>
+        <section id="skills">
 
-            <h2>Projetos</h2>
+            <h2>
+                Tecnologias & Skills
+            </h2>
 
-            <div id="projetos"></div>
+            <div id="habilidades" class="skills-grid"></div>
 
         </section>
 
-        <!-- QUIZ -->
+        <!-- PROJETOS -->
 
-        <section id="quiz">
+        <section id="projetos-section">
 
-            <h2>Descubra seu perfil dev</h2>
+            <h2>
+                Projetos
+            </h2>
 
-            <p>Você prefere trabalhar com...</p>
+            <div id="projetos" class="projetos-grid"></div>
 
-            <button id="btn-visual">
-                🎨 Visual e design
-            </button>
+        </section>
 
-            <button id="btn-logica">
-                ⚙️ Lógica e dados
-            </button>
+        <!-- ÁREA INTERATIVA -->
 
-            <p>O que você acha mais interessante?</p>
+        <section id="area-dev">
 
-            <button id="btn-animacao">
-                ✨ Criar animações e interações
-            </button>
+            <h2>
+                Qual área do desenvolvimento você prefere?
+            </h2>
 
-            <button id="btn-api">
-                🔌 Trabalhar com APIs e servidores
-            </button>
+            <div class="botoes-area">
 
-            <p>Qual dessas atividades você prefere?</p>
+                <button id="btn-api">
 
-            <button id="btn-layout">
-                📐 Montar layouts e responsividade
-            </button>
+                    ⚙️ APIs
 
-            <button id="btn-banco">
-                🗄️ Modelar banco de dados
-            </button>
+                </button>
+
+                <button id="btn-banco">
+
+                    🗄 Banco de Dados
+
+                </button>
+
+                <button id="btn-layout">
+
+                    🎨 Front-End
+
+                </button>
+
+            </div>
 
             <div id="resultado-quiz"></div>
 
         </section>
 
+        <!-- GITHUB API -->
+
+        <section id="github">
+
+            <h2>
+                GitHub Profile
+            </h2>
+
+            <div id="github-card">
+
+                <p>
+                    Carregando informações...
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- CONTATO -->
+
+        <section id="contato">
+
+            <h2>
+                Contato
+            </h2>
+
+            <form id="formulario">
+
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Seu nome"
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Seu email"
+                >
+
+                <textarea
+                    id="mensagem"
+                    placeholder="Digite sua mensagem"
+                ></textarea>
+
+                <button type="submit">
+
+                    Enviar mensagem
+
+                </button>
+
+            </form>
+
+            <p id="erro"></p>
+
+        </section>
+
     </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            © 2025 Thiago Henrique
+            • Backend Developer
+
+        </p>
+
+    </footer>
 
     <script src="/portfolio/scripts/scripts.js"></script>
 
 </body>
 
-</html>
