@@ -170,8 +170,8 @@ header{
 
 /* FOTO CÍRCULO */
 .nome-com-foto img {
-    width: 70px;
-    height: 70px;
+    width: 200px;
+    height: 200px;
 
     border-radius: 50%;
     object-fit: cover;
@@ -206,6 +206,95 @@ header{
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    
+}
+
+/* =========================
+   FORMAÇÃO
+========================= */
+
+#formacao{
+
+    margin-top:80px;
+}
+
+.formacao-card{
+
+    background:var(--card);
+
+    border-radius:var(--radius);
+
+    padding:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-bottom:25px;
+
+    border:
+    1px solid rgba(255,255,255,0.05);
+
+    transition:0.3s ease;
+}
+
+.formacao-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:var(--primary);
+}
+
+.formacao-card img{
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:cover;
+
+    border-radius:16px;
+
+    border:2px solid var(--primary);
+}
+
+.formacao-info h3{
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+
+    font-size:1.2rem;
+}
+
+.formacao-info p{
+
+    color:var(--text-soft);
+
+    margin-bottom:12px;
+
+    font-weight:600;
+}
+
+.formacao-info span{
+
+    color:var(--text-soft);
+
+    line-height:1.7;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:768px){
+
+    .formacao-card{
+
+        flex-direction:column;
+
+        text-align:center;
+    }
 }
 
 /* =========================
@@ -243,6 +332,7 @@ button:hover{
 .btn-outline{
 
     background:transparent;
+    color: #3b82f6;
 
     border:1px solid var(--primary);
 }
@@ -333,10 +423,17 @@ section h2{
 
 /* GRID */
 .projetos-grid {
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(300px, 1fr));
+
     gap: 25px;
+
     align-items: stretch;
+
+    margin-bottom: 50px;
 }
 
 /* CARD LINK (IMPORTANTE: agora é <a>) */
@@ -594,5 +691,49 @@ footer{
     .btn{
 
         width:100%;
+    }
+    /* =========================
+    BOTÃO VER MAIS
+    ========================= */
+
+    .area-botao{
+
+        display:flex;
+
+        justify-content:center;
+
+        margin-top:80px;
+
+        padding-bottom:20px;
+    }
+
+    #btnVerMais{
+
+        width:auto;
+
+        padding:10px 18px;
+
+        border:none;
+
+        border-radius:10px;
+
+        background:var(--primary);
+
+        color:white;
+
+        font-size:0.95rem;
+
+        font-weight:600;
+
+        cursor:pointer;
+
+        transition:0.3s ease;
+    }
+
+    #btnVerMais:hover{
+
+        background:var(--primary-hover);
+
+        transform:translateY(-3px);
     }
 }
