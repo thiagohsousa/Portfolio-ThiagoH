@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "Backend Developer";
 
     let minhaBio =
-        "Estudante de Desenvolvimento de Sistemas com foco em back-end, desenvolvendo APIs, banco de dados e aplicações modernas com Python e JavaScript.";
-
+    "Sou estudante de Desenvolvimento de Sistemas com foco em desenvolvimento back-end, criando aplicações modernas, APIs REST e soluções voltadas para organização e processamento de dados. Tenho experiência prática com Python, JavaScript, FastAPI, SQL e integração com bancos de dados, sempre buscando escrever códigos limpos, organizados e escaláveis.";
+        
     let anoIngresso = 2025;
 
     let anoFormatura = 2026;
@@ -47,11 +47,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 )
             ){
 
-                botaoTema.innerHTML = "☀️";
+                botaoTema.innerHTML = "Light";
 
             }else{
 
-                botaoTema.innerHTML = "🌙";
+                botaoTema.innerHTML = "Dark";
             }
         }
     );
@@ -173,7 +173,7 @@ const projetos = [
     {
         nome: "Sistema Financeiro",
         descricao: "Sistema para controle financeiro com receitas e despesas.",
-        tecnologias: ["Python", "SQLite", "FastAPI"],
+        tecnologias: ["Python", "SQLite", "Tkinter"],
         imagem: "https://images.unsplash.com/photo-1554224155-6726b3ff858f",
         repo: "https://github.com/thiagohsousa/expense_Control"
     },
@@ -187,31 +187,58 @@ const projetos = [
     {
         nome: "Sistema de Estacionamento",
         descricao: "Controle completo para redes de estacionamento",
-        tecnologias: ["Python", "Tkinter", "SQLite"],
+        tecnologias: ["Python", "Tkinter", "SQLite", "Fpdf"],
         imagem: "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a",
         repo: "https://github.com/thiagohsousa/divagas"
+    },
+    {
+        nome: "Task-Manager",
+        descricao: "Sistema de gerenciamento de tarefas do dia a dia.",
+        tecnologias: ["HTML", "Python", "SQLite", "FastApi", "SQLAlchemy"],
+        imagem: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b",
+        repo: "https://github.com/thiagohsousa/task-manager"
     }
 ];
+
+let quantidadeProjetos = 2;
 
 function listarProjetos() {
 
     let resultado = "";
 
-    for (let projeto of projetos) {
+    for(let i = 0; i < quantidadeProjetos; i++){
+
+        const projeto = projetos[i];
+
+        if(!projeto) continue;
 
         resultado += `
-            <a class="projeto-card" href="${projeto.repo}" target="_blank">
 
-                <img src="${projeto.imagem}" alt="${projeto.nome}">
+            <a 
+                class="projeto-card"
+                href="${projeto.repo}"
+                target="_blank"
+            >
+
+                <img 
+                    src="${projeto.imagem}" 
+                    alt="${projeto.nome}"
+                >
 
                 <div class="projeto-info">
 
-                    <h3>${projeto.nome}</h3>
+                    <h3>
+                        ${projeto.nome}
+                    </h3>
 
-                    <p>${projeto.descricao}</p>
+                    <p>
+                        ${projeto.descricao}
+                    </p>
 
                     <div class="techs">
+
                         ${projeto.tecnologias.join(" • ")}
+
                     </div>
 
                 </div>
@@ -223,9 +250,13 @@ function listarProjetos() {
     return resultado;
 }
 
-function exibirProjetos() {
-    document.getElementById("projetos").innerHTML = listarProjetos();
+function exibirProjetos(){
+
+    document.getElementById(
+        "projetos"
+    ).innerHTML = listarProjetos();
 }
+
     /* ========================================
        ÁREA DEV
     ======================================== */
@@ -393,6 +424,86 @@ async function buscarGithub() {
         `;
     }
 }
+
+ /* ========================================
+   EMAILJS
+======================================== */
+
+emailjs.init("xbc8ufv16EA0Nux4k");
+
+formulario.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+        const nome =
+            document.getElementById(
+                "nome"
+            ).value;
+
+        const email =
+            document.getElementById(
+                "email"
+            ).value;
+
+        const mensagem =
+            document.getElementById(
+                "mensagem"
+            ).value;
+
+        emailjs.send(
+            "service_1afdh9r",
+            "template_ywirwno",
+            {
+                nome: nome,
+                email: email,
+                mensagem: mensagem
+            }
+        )
+
+        .then(function(){
+
+            alert(
+                "Mensagem enviada com sucesso!"
+            );
+
+            formulario.reset();
+
+        })
+
+        .catch(function(error){
+
+            alert(
+                "Erro ao enviar mensagem."
+            );
+
+            console.log(error);
+
+        });
+
+    }
+);
+
+
+document.getElementById(
+    "btnVerMais"
+).addEventListener(
+    "click",
+    function(){
+
+        quantidadeProjetos += 2;
+
+        exibirProjetos();
+
+        if(
+            quantidadeProjetos >= projetos.length
+        ){
+
+            this.style.display = "none";
+        }
+    }
+);
     /* ========================================
        INICIAR
     ======================================== */
