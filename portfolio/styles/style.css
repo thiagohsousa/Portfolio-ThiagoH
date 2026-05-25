@@ -19,9 +19,9 @@
 
     --text-soft:#cbd5e1;
 
-    --primary:#38bdf8;
+    --primary:#3b82f6;
 
-    --primary-hover:#0ea5e9;
+    --primary-hover:#2563eb;
 
     --border:#475569;
 
@@ -60,7 +60,9 @@ textarea,
 .skill-card,
 .sobre-card,
 #github-card,
-#resultado-quiz{
+#resultado-quiz,
+.cert-card,
+.formacao-card{
 
     transition:0.3s ease;
 }
@@ -122,6 +124,8 @@ header{
     color:var(--text);
 
     text-decoration:none;
+
+    font-weight:500;
 }
 
 .menu a:hover{
@@ -134,167 +138,81 @@ header{
 ========================= */
 
 #hero {
-    min-height: 100vh;
 
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-
-    padding: 120px 20px 60px;
-}
-
-.hero-content {
-    max-width: 700px;
-
-    margin-left: 80px; 
-
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-}
-.hero-content {
-    max-width: 700px;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 22px; 
-}
-
-/* FOTO + NOME */
-.nome-com-foto {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-/* FOTO CÍRCULO */
-.nome-com-foto img {
-    width: 200px;
-    height: 200px;
-
-    border-radius: 50%;
-    object-fit: cover;
-
-    border: 3px solid var(--primary);
-    box-shadow: 0 0 18px rgba(56, 189, 248, 0.5);
-}
-
-/* NOME */
-#meuNome {
-    font-size: 4rem;
-    margin: 0;
-    color: var(--primary);
-}
-
-/* TÍTULO */
-#tituloProfissional {
-    font-size: 2rem;
-    margin: 0;
-}
-
-/* BIO */
-#minhaBio {
-    font-size: 1.1rem;
-    color: var(--text-soft);
-    line-height: 1.8;
-    margin: 0;
-}
-
-/* BOTÕES */
-.hero-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    
-}
-
-/* =========================
-   FORMAÇÃO
-========================= */
-
-#formacao{
-
-    margin-top:80px;
-}
-
-.formacao-card{
-
-    background:var(--card);
-
-    border-radius:var(--radius);
-
-    padding:25px;
+    min-height:100vh;
 
     display:flex;
 
     align-items:center;
 
-    gap:25px;
-
-    margin-bottom:25px;
-
-    border:
-    1px solid rgba(255,255,255,0.05);
-
-    transition:0.3s ease;
+    padding:120px 20px 60px;
 }
 
-.formacao-card:hover{
+.hero-content {
 
-    transform:translateY(-5px);
+    max-width:700px;
 
-    border-color:var(--primary);
+    margin-left:80px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
 }
 
-.formacao-card img{
+.nome-com-foto {
 
-    width:90px;
+    display:flex;
 
-    height:90px;
+    align-items:center;
+
+    gap:20px;
+}
+
+.nome-com-foto img {
+
+    width:200px;
+
+    height:200px;
+
+    border-radius:50%;
 
     object-fit:cover;
 
-    border-radius:16px;
+    border:3px solid var(--primary);
 
-    border:2px solid var(--primary);
+    box-shadow:0 0 18px rgba(59,130,246,0.4);
 }
 
-.formacao-info h3{
+#meuNome {
+
+    font-size:4rem;
 
     color:var(--primary);
-
-    margin-bottom:8px;
-
-    font-size:1.2rem;
 }
 
-.formacao-info p{
+#tituloProfissional {
+
+    font-size:2rem;
+}
+
+#minhaBio {
+
+    font-size:1.1rem;
 
     color:var(--text-soft);
 
-    margin-bottom:12px;
-
-    font-weight:600;
+    line-height:1.8;
 }
 
-.formacao-info span{
+.hero-buttons {
 
-    color:var(--text-soft);
+    display:flex;
 
-    line-height:1.7;
-}
+    gap:15px;
 
-/* RESPONSIVO */
-
-@media(max-width:768px){
-
-    .formacao-card{
-
-        flex-direction:column;
-
-        text-align:center;
-    }
+    flex-wrap:wrap;
 }
 
 /* =========================
@@ -332,9 +250,10 @@ button:hover{
 .btn-outline{
 
     background:transparent;
-    color: #3b82f6;
 
     border:1px solid var(--primary);
+
+    color:var(--primary);
 }
 
 /* =========================
@@ -342,9 +261,12 @@ button:hover{
 ========================= */
 
 section {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 30px 20px;
+
+    max-width:1200px;
+
+    margin:40px auto;
+
+    padding:30px 20px;
 }
 
 section h2{
@@ -362,15 +284,84 @@ section h2{
 
 .sobre-card{
 
-    background:
-    rgba(30,41,59,0.7);
+    background:rgba(30,41,59,0.7);
 
     padding:30px;
 
     border-radius:var(--radius);
 
-    border:
-    1px solid rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+/* =========================
+   FORMAÇÃO
+========================= */
+
+#formacao{
+
+    margin-top:80px;
+}
+
+.formacao-card{
+
+    background:var(--card);
+
+    border-radius:var(--radius);
+
+    padding:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-bottom:25px;
+
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.formacao-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:var(--primary);
+}
+
+.formacao-card img{
+
+    width:90px;
+
+    height:90px;
+
+    object-fit:cover;
+
+    border-radius:16px;
+
+    border:2px solid var(--primary);
+}
+
+.formacao-info h3{
+
+    color:var(--primary);
+
+    margin-bottom:8px;
+}
+
+.formacao-info p{
+
+    color:var(--text-soft);
+
+    margin-bottom:12px;
+
+    font-weight:600;
+}
+
+.formacao-info span{
+
+    color:var(--text-soft);
+
+    line-height:1.7;
 }
 
 /* =========================
@@ -397,8 +388,7 @@ section h2{
 
     text-align:center;
 
-    border:
-    1px solid rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.05);
 }
 
 .skill-card:hover{
@@ -418,75 +408,192 @@ section h2{
 }
 
 /* =========================
+   CERTIFICAÇÕES
+========================= */
+
+.cert-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+}
+
+.cert-card{
+
+    background:var(--card);
+
+    padding:25px;
+
+    border-radius:var(--radius);
+
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.cert-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:var(--primary);
+}
+
+.cert-logo{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+}
+.cert-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+    line-height:1.5;
+}
+
+.cert-card p{
+
+    color:var(--text-soft);
+
+    margin-bottom:15px;
+
+    font-weight:600;
+}
+
+.cert-card span{
+
+    color:var(--text-soft);
+
+    line-height:1.7;
+}
+.cert-card{
+
+    text-decoration:none;
+
+    color:inherit;
+
+    display:block;
+}
+.cert-card{
+
+    overflow:hidden;
+}
+
+/* =========================
    PROJETOS
 ========================= */
 
-/* GRID */
 .projetos-grid {
 
-    display: grid;
+    display:grid;
 
     grid-template-columns:
-    repeat(auto-fit, minmax(300px, 1fr));
+    repeat(auto-fit,minmax(300px,1fr));
 
-    gap: 25px;
+    gap:25px;
 
-    align-items: stretch;
-
-    margin-bottom: 50px;
+    margin-bottom:20px;
 }
 
-/* CARD LINK (IMPORTANTE: agora é <a>) */
 .projeto-card {
-    background: var(--card);
-    border-radius: var(--radius);
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.05);
 
-    text-decoration: none;
-    color: inherit;
+    background:var(--card);
 
-    display: flex;
-    flex-direction: column;
+    border-radius:var(--radius);
 
-    transition: 0.3s ease;
-    cursor: pointer;
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,0.05);
+
+    text-decoration:none;
+
+    color:inherit;
+
+    display:flex;
+
+    flex-direction:column;
 }
 
 .projeto-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--primary);
+
+    transform:translateY(-8px);
+
+    border-color:var(--primary);
 }
 
-/* IMAGEM */
 .projeto-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
 }
 
-/* INFO */
 .projeto-info {
-    padding: 20px;
+
+    padding:20px;
 }
 
 .projeto-info h3 {
-    margin-bottom: 10px;
+
+    margin-bottom:10px;
 }
 
 .projeto-info p {
-    color: var(--text-soft);
-    line-height: 1.6;
-    margin-bottom: 15px;
+
+    color:var(--text-soft);
+
+    line-height:1.6;
+
+    margin-bottom:15px;
 }
 
-/* TECNOLOGIAS */
 .techs {
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 0.9rem;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    font-size:0.9rem;
 }
+
+/* =========================
+   BOTÃO VER MAIS
+========================= */
+
+.area-botao{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:40px;
+
+    padding-bottom:20px;
+}
+
+#btnVerMais,
+#btnVerCertificados{
+
+    width:auto;
+
+    padding:12px 22px;
+
+    border-radius:12px;
+}
+
 /* =========================
    ÁREA DEV
 ========================= */
@@ -507,39 +614,62 @@ section h2{
 ========================= */
 
 #github-card {
-    background: var(--card);
-    padding: 30px;
-    border-radius: var(--radius);
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+    background:var(--card);
 
-    text-align: center;
+    padding:30px;
+
+    border-radius:var(--radius);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-align:center;
 }
 
 #github-card img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--primary);
-}
 
-#github-card h3 {
-    margin-top: 10px;
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid var(--primary);
 }
 
 #github-card p {
-    margin: 4px 0;
-    color: var(--text-soft);
+
+    color:var(--text-soft);
+}
+.light-mode #github-card{
+
+    background:white;
+
+    border:1px solid #cbd5e1;
 }
 
-#github-card a {
-    margin-top: 10px;
+.light-mode #github-card h3{
+
+    color:#0f172a;
 }
 
+.light-mode #github-card p{
+
+    color:#334155;
+}
+
+.light-mode #github-card strong{
+
+    color:#0f172a;
+}
 
 /* =========================
    FORMULÁRIO
@@ -613,8 +743,7 @@ footer{
     background:
     rgba(255,255,255,0.85);
 
-    border-bottom:
-    1px solid #cbd5e1;
+    border-bottom:1px solid #cbd5e1;
 }
 
 .light-mode .menu a{
@@ -631,14 +760,17 @@ footer{
 }
 
 .light-mode p,
+.light-mode span,
 .light-mode #minhaBio{
 
     color:#334155;
 }
 
+.light-mode .formacao-card,
 .light-mode .projeto-card,
 .light-mode .skill-card,
 .light-mode .sobre-card,
+.light-mode .cert-card,
 .light-mode #github-card,
 .light-mode #resultado-quiz,
 .light-mode input,
@@ -648,8 +780,7 @@ footer{
 
     color:#0f172a;
 
-    border:
-    1px solid #cbd5e1;
+    border:1px solid #cbd5e1;
 }
 
 /* =========================
@@ -672,6 +803,25 @@ footer{
         justify-content:center;
     }
 
+    .hero-content{
+
+        margin-left:0;
+
+        text-align:center;
+    }
+
+    .nome-com-foto{
+
+        flex-direction:column;
+    }
+
+    .nome-com-foto img{
+
+        width:140px;
+
+        height:140px;
+    }
+
     #meuNome{
 
         font-size:2.8rem;
@@ -692,48 +842,11 @@ footer{
 
         width:100%;
     }
-    /* =========================
-    BOTÃO VER MAIS
-    ========================= */
 
-    .area-botao{
+    .formacao-card{
 
-        display:flex;
+        flex-direction:column;
 
-        justify-content:center;
-
-        margin-top:80px;
-
-        padding-bottom:20px;
-    }
-
-    #btnVerMais{
-
-        width:auto;
-
-        padding:10px 18px;
-
-        border:none;
-
-        border-radius:10px;
-
-        background:var(--primary);
-
-        color:white;
-
-        font-size:0.95rem;
-
-        font-weight:600;
-
-        cursor:pointer;
-
-        transition:0.3s ease;
-    }
-
-    #btnVerMais:hover{
-
-        background:var(--primary-hover);
-
-        transform:translateY(-3px);
+        text-align:center;
     }
 }
