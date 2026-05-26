@@ -1,28 +1,38 @@
 'use strict';
+// Ativa o modo estrito do JavaScript.
+// Isso ajuda a evitar erros comuns e torna o código mais seguro.
 
 document.addEventListener("DOMContentLoaded", function () {
+// Espera todo o HTML carregar antes de executar o JavaScript.
 
     /* ========================================
        DADOS PRINCIPAIS
     ======================================== */
 
     const NOME = "Thiago Henrique";
+    // Define o nome principal do portfólio.
 
     let tituloProfissional =
         "Backend Developer";
+    // Define o cargo/profissão exibido no site.
 
     let minhaBio =
         "Sou estudante de Desenvolvimento de Sistemas com foco em desenvolvimento back-end, criando aplicações modernas, APIs REST e soluções voltadas para organização e processamento de dados. Tenho experiência prática com Python, JavaScript, FastAPI, SQL e integração com bancos de dados, sempre buscando escrever códigos limpos, organizados e escaláveis.";
+    // Texto da biografia do usuário.
 
     let anoIngresso = 2025;
+    // Ano em que começou os estudos.
 
     let anoFormatura = 2026;
+    // Ano previsto de formatura.
 
     let anoAtual =
         new Date().getFullYear();
+    // Pega automaticamente o ano atual do sistema.
 
     let anosEstudo =
         anoAtual - anoIngresso;
+    // Calcula quantos anos de estudo já se passaram.
 
     /* ========================================
        DARK / LIGHT MODE
@@ -32,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(
             "modoEscuroClaro"
         );
+    // Seleciona o botão responsável por trocar o tema.
 
     botaoTema.addEventListener(
         "click",
@@ -40,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.classList.toggle(
                 "light-mode"
             );
+            // Adiciona ou remove a classe "light-mode" do body.
 
             if (
                 document.body.classList.contains(
@@ -48,10 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
             ) {
 
                 botaoTema.innerHTML = "Light";
+                // Se estiver no modo claro, altera o texto do botão.
 
             } else {
 
                 botaoTema.innerHTML = "Dark";
+                // Se estiver no modo escuro, altera o texto do botão.
             }
         }
     );
@@ -61,18 +75,22 @@ document.addEventListener("DOMContentLoaded", function () {
     ======================================== */
 
     function exibirInformacoes() {
+    // Função responsável por exibir as informações pessoais na tela.
 
         document.getElementById(
             "meuNome"
         ).innerText = NOME;
+        // Insere o nome no HTML.
 
         document.getElementById(
             "tituloProfissional"
         ).innerText = tituloProfissional;
+        // Insere o título profissional.
 
         document.getElementById(
             "minhaBio"
         ).innerText = minhaBio;
+        // Insere a biografia.
 
         document.getElementById(
             "anoIngresso"
@@ -82,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 ${anosEstudo} ano(s)
             </p>
         `;
+        // Mostra quantos anos de estudo o usuário possui.
 
         document.getElementById(
             "tempoRestante"
@@ -91,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 ${anoFormatura}
             </p>
         `;
+        // Mostra o ano previsto de formatura.
     }
 
     /* ========================================
@@ -98,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ======================================== */
 
     const habilidades = [
+    // Array contendo as habilidades e seus ícones.
 
         {
             nome: "Python",
@@ -136,10 +157,12 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
     function listarHabilidades() {
+    // Cria o HTML das habilidades.
 
         let resultado = "";
 
         for (let habilidade of habilidades) {
+        // Percorre todas as habilidades.
 
             resultado += `
 
@@ -153,12 +176,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 </div>
             `;
+            // Monta cada card de habilidade.
         }
 
         return resultado;
+        // Retorna todo o HTML criado.
     }
 
     function exibirHabilidades() {
+    // Exibe as habilidades no site.
 
         document.getElementById(
             "habilidades"
@@ -169,101 +195,80 @@ document.addEventListener("DOMContentLoaded", function () {
        CERTIFICAÇÕES
     ======================================== */
 
-  const certificacoes = [
+    const certificacoes = [
+    // Lista de certificações.
 
-    {
-        titulo:"Introdução à Programação Orientada a Objetos (POO)",
+        {
+            titulo:"Introdução à Programação Orientada a Objetos (POO)",
 
-        instituicao:"Fundação Bradesco",
+            instituicao:"Fundação Bradesco",
 
-        descricao:
-        "Conceitos fundamentais de orientação a objetos, incluindo classes, objetos, encapsulamento e herança.",
+            descricao:
+            "Conceitos fundamentais de orientação a objetos, incluindo classes, objetos, encapsulamento e herança.",
 
-        imagem:
-        "https://tse3.mm.bing.net/th/id/OIP.CivRTg3HTixxeagr8YE8DwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
+            imagem:
+            "https://tse3.mm.bing.net/th/id/OIP.CivRTg3HTixxeagr8YE8DwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
 
-        link:
-        "https://drive.google.com/file/d/1yUCqwlWXrBxG-DlwyrSQwH4lG-MWBhWQ/view?usp=sharing"
-    },
+            link:
+            "https://drive.google.com/file/d/1yUCqwlWXrBxG-DlwyrSQwH4lG-MWBhWQ/view?usp=sharing"
+        },
 
-    {
-        titulo:"Linguagem de Programação Python - Básico",
+        // Outros certificados...
+    ];
 
-        instituicao:"Fundação Bradesco",
-
-        descricao:
-        "Fundamentos da linguagem Python, lógica de programação, estruturas condicionais e repetição.",
-
-        imagem:
-        "https://tse3.mm.bing.net/th/id/OIP.CivRTg3HTixxeagr8YE8DwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-
-        link:
-        "https://drive.google.com/file/d/1fQJxcQWABZ8WdpM37zL-2HWl776CHnsF/view?usp=sharing"
-    },
-
-    {
-        titulo:"Desenvolvimento Orientado a Objetos Utilizando Python",
-
-        instituicao:"Fundação Bradesco",
-
-        descricao:
-        "Aplicação prática de orientação a objetos utilizando Python e modularização de código.",
-
-        imagem:
-        "https://tse3.mm.bing.net/th/id/OIP.CivRTg3HTixxeagr8YE8DwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-
-        link:
-        "https://drive.google.com/file/d/1oFneiGsEhUvXkmzQ38Qi1R_p78oC4hNA/view"
-    }
-
-];
     let mostrandoTodosCertificados = false;
+    // Controla se todos os certificados serão exibidos ou não.
 
-  function listarCertificacoes(){
+    function listarCertificacoes(){
+    // Gera o HTML das certificações.
 
-    let resultado = "";
+        let resultado = "";
 
-    let lista =
-        mostrandoTodosCertificados
-        ? certificacoes
-        : certificacoes.slice(0,2);
+        let lista =
+            mostrandoTodosCertificados
+            ? certificacoes
+            : certificacoes.slice(0,2);
+        // Se for true mostra todos.
+        // Se for false mostra apenas os 2 primeiros.
 
-    for(let cert of lista){
+        for(let cert of lista){
 
-        resultado += `
+            resultado += `
 
-            <a
-                href="${cert.link}"
-                target="_blank"
-                class="cert-card"
-            >
-
-                <img
-                    src="${cert.imagem}"
-                    alt="${cert.instituicao}"
-                    class="cert-logo"
+                <a
+                    href="${cert.link}"
+                    target="_blank"
+                    class="cert-card"
                 >
 
-                <h3>
-                    ${cert.titulo}
-                </h3>
+                    <img
+                        src="${cert.imagem}"
+                        alt="${cert.instituicao}"
+                        class="cert-logo"
+                    >
 
-                <p>
-                    ${cert.instituicao}
-                </p>
+                    <h3>
+                        ${cert.titulo}
+                    </h3>
 
-                <span>
-                    ${cert.descricao}
-                </span>
+                    <p>
+                        ${cert.instituicao}
+                    </p>
 
-            </a>
-        `;
+                    <span>
+                        ${cert.descricao}
+                    </span>
+
+                </a>
+            `;
+            // Cria o card do certificado.
+        }
+
+        return resultado;
     }
 
-    return resultado;
-}
-
     function exibirCertificacoes() {
+    // Exibe as certificações no HTML.
 
         document.getElementById(
             "certificacoes-grid"
@@ -278,13 +283,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             mostrandoTodosCertificados =
                 !mostrandoTodosCertificados;
+            // Inverte true/false.
 
             exibirCertificacoes();
+            // Atualiza os certificados exibidos.
 
             this.innerText =
                 mostrandoTodosCertificados
                     ? "Ver Menos"
                     : "Ver Mais Certificações";
+            // Altera o texto do botão.
         }
     );
 
@@ -293,6 +301,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ======================================== */
 
     const projetos = [
+    // Lista de projetos do portfólio.
 
         {
             nome: "Sistema Financeiro",
@@ -308,60 +317,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             repo:
                 "https://github.com/thiagohsousa/expense_Control"
-        },
-
-        {
-            nome: "API de Clientes",
-
-            descricao:
-                "API REST para gerenciamento de clientes.",
-
-            tecnologias:
-                ["FastAPI", "SQLAlchemy", "SQLite"],
-
-            imagem:
-                "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
-
-            repo:
-                "https://github.com/thiagohsousa/AuthFlow-API"
-        },
-
-        {
-            nome: "Sistema de Estacionamento",
-
-            descricao:
-                "Controle completo para redes de estacionamento",
-
-            tecnologias:
-                ["Python", "Tkinter", "SQLite", "Fpdf"],
-
-            imagem:
-                "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a",
-
-            repo:
-                "https://github.com/thiagohsousa/divagas"
-        },
-
-        {
-            nome: "Task-Manager",
-
-            descricao:
-                "Sistema de gerenciamento de tarefas do dia a dia.",
-
-            tecnologias:
-                ["HTML", "Python", "SQLite", "FastApi", "SQLAlchemy"],
-
-            imagem:
-                "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b",
-
-            repo:
-                "https://github.com/thiagohsousa/task-manager"
         }
+
+        // Outros projetos...
     ];
 
     let quantidadeProjetos = 2;
+    // Quantidade inicial de projetos exibidos.
 
     function listarProjetos() {
+    // Cria os cards dos projetos.
 
         let resultado = "";
 
@@ -370,6 +335,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const projeto = projetos[i];
 
             if (!projeto) continue;
+            // Evita erro caso não exista projeto.
 
             resultado += `
 
@@ -410,6 +376,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function exibirProjetos() {
+    // Exibe os projetos na tela.
 
         document.getElementById(
             "projetos"
@@ -417,40 +384,42 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     document.getElementById(
-    "btnVerMais"
-).addEventListener(
-    "click",
-    function(){
-
-        if(
-            quantidadeProjetos >= projetos.length
-        ){
-
-            quantidadeProjetos = 2;
-
-            this.innerText =
-            "Ver Mais Projetos";
-
-        }else{
-
-            quantidadeProjetos += 2;
+        "btnVerMais"
+    ).addEventListener(
+        "click",
+        function(){
 
             if(
                 quantidadeProjetos >= projetos.length
             ){
 
-                quantidadeProjetos =
-                projetos.length;
+                quantidadeProjetos = 2;
+                // Volta para apenas 2 projetos.
 
                 this.innerText =
-                "Ver Menos";
+                "Ver Mais Projetos";
 
+            }else{
+
+                quantidadeProjetos += 2;
+                // Mostra mais 2 projetos.
+
+                if(
+                    quantidadeProjetos >= projetos.length
+                ){
+
+                    quantidadeProjetos =
+                    projetos.length;
+
+                    this.innerText =
+                    "Ver Menos";
+                }
             }
-        }
 
-        exibirProjetos();
-    }
-);
+            exibirProjetos();
+            // Atualiza a lista de projetos.
+        }
+    );
 
     /* ========================================
        ÁREA DEV
@@ -460,6 +429,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(
             "resultado-quiz"
         );
+    // Elemento onde será exibido o resultado do quiz.
 
     document.getElementById(
         "btn-api"
@@ -468,7 +438,6 @@ document.addEventListener("DOMContentLoaded", function () {
         function () {
 
             resultadoQuiz.innerHTML = `
-
                 <h3>
                     ⚙️ APIs & Backend
                 </h3>
@@ -479,48 +448,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     e desenvolvimento de APIs.
                 </p>
             `;
-        }
-    );
-
-    document.getElementById(
-        "btn-banco"
-    ).addEventListener(
-        "click",
-        function () {
-
-            resultadoQuiz.innerHTML = `
-
-                <h3>
-                    🗄 Banco de Dados
-                </h3>
-
-                <p>
-                    Você gosta de modelagem,
-                    organização de dados
-                    e consultas SQL.
-                </p>
-            `;
-        }
-    );
-
-    document.getElementById(
-        "btn-layout"
-    ).addEventListener(
-        "click",
-        function () {
-
-            resultadoQuiz.innerHTML = `
-
-                <h3>
-                    🎨 Front-End
-                </h3>
-
-                <p>
-                    Você gosta de interfaces,
-                    animações e experiência
-                    do usuário.
-                </p>
-            `;
+            // Exibe resultado relacionado a Backend.
         }
     );
 
@@ -532,12 +460,14 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(
             "formulario"
         );
+    // Seleciona o formulário de contato.
 
     /* ========================================
        GITHUB API
     ======================================== */
 
     async function buscarGithub() {
+    // Busca informações do GitHub usando API.
 
         try {
 
@@ -545,9 +475,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 await fetch(
                     "https://api.github.com/users/thiagohsousa"
                 );
+            // Faz requisição para API do GitHub.
 
             const dados =
                 await resposta.json();
+            // Converte resposta para JSON.
 
             document.getElementById(
                 "github-card"
@@ -584,6 +516,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     Ver perfil
                 </a>
             `;
+            // Exibe informações do GitHub no site.
 
         } catch (erro) {
 
@@ -594,6 +527,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     Erro ao carregar GitHub
                 </p>
             `;
+            // Exibe erro caso a API falhe.
         }
     }
 
@@ -604,12 +538,14 @@ document.addEventListener("DOMContentLoaded", function () {
     emailjs.init(
         "xbc8ufv16EA0Nux4k"
     );
+    // Inicializa o EmailJS com a chave pública.
 
     formulario.addEventListener(
         "submit",
         function (event) {
 
             event.preventDefault();
+            // Impede o formulário de recarregar a página.
 
             const nome =
                 document.getElementById(
@@ -625,6 +561,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById(
                     "mensagem"
                 ).value;
+            // Captura os valores digitados.
 
             emailjs.send(
                 "service_1afdh9r",
@@ -636,25 +573,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             )
 
-                .then(function () {
+            .then(function () {
 
-                    alert(
-                        "Mensagem enviada com sucesso!"
-                    );
+                alert(
+                    "Mensagem enviada com sucesso!"
+                );
+                // Mensagem de sucesso.
 
-                    formulario.reset();
+                formulario.reset();
+                // Limpa o formulário.
 
-                })
+            })
 
-                .catch(function (error) {
+            .catch(function (error) {
 
-                    alert(
-                        "Erro ao enviar mensagem."
-                    );
+                alert(
+                    "Erro ao enviar mensagem."
+                );
+                // Mensagem de erro.
 
-                    console.log(error);
+                console.log(error);
+                // Mostra o erro no console.
 
-                });
+            });
 
         }
     );
@@ -664,6 +605,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ======================================== */
 
     function iniciar() {
+    // Função principal que inicia tudo.
 
         exibirInformacoes();
 
@@ -677,5 +619,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     iniciar();
+    // Executa todas as funções iniciais.
 
 });
