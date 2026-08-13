@@ -201,7 +201,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const certificacoes = [
   // Array contendo as certificações.
-  
 
     {
         titulo:"Introdução à Programação Orientada a Objetos (POO)",
@@ -338,7 +337,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const projetos = [
     // Array contendo os projetos do portfólio.
-    {
+
+        {
             nome: "YouResum-IA",
 
             descricao:
@@ -775,5 +775,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     iniciar();
     // Inicia todas as funções do sistema.
-
 });
