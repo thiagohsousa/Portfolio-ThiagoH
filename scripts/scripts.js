@@ -201,6 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const certificacoes = [
   // Array contendo as certificações.
+  
 
     {
         titulo:"Introdução à Programação Orientada a Objetos (POO)",
@@ -337,6 +338,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const projetos = [
     // Array contendo os projetos do portfólio.
+    {
+            nome: "YouResum-IA",
+
+            descricao:
+                "Resumidor inteligente de vídeos do YouTube com IA (Groq/Llama 3), extração de transcrições e fallback de resiliência.",
+
+            tecnologias:
+                ["Python", "Flask", "Groq API", "yt-dlp"],
+
+            imagem:
+                "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe",
+
+            repo:
+                "https://github.com/thiagohsousa/YouResum-IA"
+        },
 
         {
             nome: "Sistema Financeiro",
