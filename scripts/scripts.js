@@ -493,7 +493,7 @@ document.addEventListener("DOMContentLoaded", function () {
         ){
         // Se todos os projetos já estiverem aparecendo.
 
-            quantidadeProjetos = 2;
+            quantidadeProjetos = 4;
             // Volta para mostrar apenas 2.
 
             this.innerText =
@@ -501,8 +501,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }else{
 
-            quantidadeProjetos += 2;
-            // Mostra mais 2 projetos.
+            quantidadeProjetos += 4;
+            // Mostra mais 4 projetos.
 
             if(
                 quantidadeProjetos >= projetos.length
