@@ -128,6 +128,11 @@ document.addEventListener("DOMContentLoaded", function () {
         },
 
         {
+            nome: "Flask",
+            icone: "devicon-flask-original"
+        },
+
+        {
             nome: "JavaScript",
             icone: "devicon-javascript-plain"
         },
@@ -524,82 +529,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 );
 
-    /* ========================================
-       ÁREA DEV
-    ======================================== */
-
-    const resultadoQuiz =
-        document.getElementById(
-            "resultado-quiz"
-        );
-    // Elemento onde o resultado do quiz será exibido.
-
-    document.getElementById(
-        "btn-api"
-    ).addEventListener(
-        "click",
-        function () {
-
-            resultadoQuiz.innerHTML = `
-
-                <h3>
-                    ⚙️ APIs & Backend
-                </h3>
-
-                <p>
-                    Você gosta de lógica,
-                    integração de sistemas
-                    e desenvolvimento de APIs.
-                </p>
-            `;
-            // Mostra resultado relacionado a backend.
-        }
-    );
-
-    document.getElementById(
-        "btn-banco"
-    ).addEventListener(
-        "click",
-        function () {
-
-            resultadoQuiz.innerHTML = `
-
-                <h3>
-                    🗄 Banco de Dados
-                </h3>
-
-                <p>
-                    Você gosta de modelagem,
-                    organização de dados
-                    e consultas SQL.
-                </p>
-            `;
-            // Mostra resultado relacionado a banco de dados.
-        }
-    );
-
-    document.getElementById(
-        "btn-layout"
-    ).addEventListener(
-        "click",
-        function () {
-
-            resultadoQuiz.innerHTML = `
-
-                <h3>
-                    🎨 Front-End
-                </h3>
-
-                <p>
-                    Você gosta de interfaces,
-                    animações e experiência
-                    do usuário.
-                </p>
-            `;
-            // Mostra resultado relacionado a front-end.
-        }
-    );
-
+   
     /* ========================================
        FORMULÁRIO
     ======================================== */
